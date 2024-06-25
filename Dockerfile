@@ -3,11 +3,11 @@ FROM node:20-alpine AS build
 
 WORKDIR /app
 
-COPY package*.json yarn.lock ./
-RUN yarn install
+COPY package*.json ./
+RUN npm install
 
 COPY . .
-RUN yarn build
+RUN npm run build
 
 # Stage 2: Serve the app with Nginx
 FROM nginx:alpine
