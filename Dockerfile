@@ -1,13 +1,10 @@
 # Stage 1: Build the React app with Vite using Yarn
 FROM node:20 AS build
 
-# Install Yarn
-RUN npm install -g yarn
-
 WORKDIR /app
 
 COPY package*.json yarn.lock ./
-RUN yarn
+RUN yarn install
 
 COPY . .
 RUN yarn build
