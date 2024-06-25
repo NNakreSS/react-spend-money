@@ -1,5 +1,5 @@
 # Stage 1: Build the React app with Vite using Yarn
-FROM node:20 AS build
+FROM node:20-alpine AS build
 
 WORKDIR /app
 
